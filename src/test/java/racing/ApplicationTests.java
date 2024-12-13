@@ -3,6 +3,7 @@ package racing;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -15,13 +16,22 @@ class ApplicationTests {
         System.out.println(carname.getCarname());
     }
 
-//    @Test
-//    void CarlistTest() {
+    @Test
+    void CarwinnerTest() {
+        Carname carname = new Carname("21");
+        List<Carname> 비교군 = new ArrayList<>();
+        비교군.add(carname);
+        List<Carname> carnameList = new ArrayList<>();
+        carnameList.add(carname);
+        assertThat(carnameList).isEqualTo(비교군);
+    }
+//        @Test
+//        void CarlistTest() {
 //        CarlistMap carlist = new CarlistMap();
 //        carlist.creatcarlist("122");
 //        assertThat(carlist.creatcarlist("122"));
-//
-//    }
+
+}
 
 //    @Test
 //    void CarlistMapTEST() {
@@ -30,4 +40,4 @@ class ApplicationTests {
 //        carmap.carmap(carlist.creatcarlist("122"));
 //        assertThat(carmap.carmap(carlist.creatcarlist("112"))).isEqualTo("122");
 //    }
-}
+

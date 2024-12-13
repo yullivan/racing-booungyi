@@ -47,7 +47,7 @@ public class CarWinner {
         }
     }
 
-    private Map<Carname, String> initializeRace(List<Carname> carnames) {
+    public Map<Carname, String> initializeRace(List<Carname> carnames) {
         Map<Carname, String> map = new HashMap<>();
         // 자동차 이름과 초기 상태를 맵에 설정
         for (Carname carname : carnames) {
