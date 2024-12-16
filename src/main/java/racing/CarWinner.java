@@ -1,9 +1,6 @@
 package racing;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 public class CarWinner {
     private CarRandom random = new CarRandom();
@@ -47,7 +44,7 @@ public class CarWinner {
         }
     }
 
-    public Map<Carname, String> initializeRace(List<Carname> carnames) {
+    public static Map<Carname, String> initializeRace(List<Carname> carnames) {
         Map<Carname, String> map = new HashMap<>();
         // 자동차 이름과 초기 상태를 맵에 설정
         for (Carname carname : carnames) {
@@ -56,7 +53,7 @@ public class CarWinner {
         return map;
     }
 
-    private boolean raceCars(List<Carname> carnames, Map<Carname, String> map) {
+    public boolean raceCars(List<Carname> carnames, Map<Carname, String> map) {
         boolean hasWinner = false;
 
         for (Carname carname : carnames) {
@@ -75,14 +72,14 @@ public class CarWinner {
         return hasWinner;
     }
 
-    private void printRaceStatus(Map<Carname, String> map) {
+    public void printRaceStatus(Map<Carname, String> map) {
         // 각 자동차의 상태 출력
         for (Map.Entry<Carname, String> entry : map.entrySet()) {
             System.out.println(entry.getKey() + " " + entry.getValue());
         }
     }
 
-    private void announceWinner(Map<Carname, String> map) {
+    public void announceWinner(Map<Carname, String> map) {
         // 승자가 있으면 결과 출력 후 게임 종료
         System.out.print("우승자는 ");
         for (Map.Entry<Carname, String> entry : map.entrySet()) {
@@ -91,4 +88,13 @@ public class CarWinner {
             }
         }
     }
+    public List<Carname> creatcarlist(String string) {
+        List<Carname> carlist = new ArrayList<>();
+        for (String str : string.split(",")) {
+            Carname carname = new Carname(str);
+            carlist.add(carname);
+        }
+        return carlist;
+    }
+
 }

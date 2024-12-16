@@ -6,6 +6,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.assertj.core.api.Assertions.as;
 import static org.assertj.core.api.Assertions.assertThat;
 
 class ApplicationTests {
@@ -25,13 +26,21 @@ class ApplicationTests {
         carnameList.add(carname);
         assertThat(carnameList).isEqualTo(비교군);
     }
+
+    @Test
+    void CarRandomTest() {
+        int randomget = CarRandom.getRand();
+        assertThat(randomget).isBetween(1, 6);
+    }
+
+}
 //        @Test
 //        void CarlistTest() {
 //        CarlistMap carlist = new CarlistMap();
 //        carlist.creatcarlist("122");
 //        assertThat(carlist.creatcarlist("122"));
 
-}
+
 
 //    @Test
 //    void CarlistMapTEST() {
