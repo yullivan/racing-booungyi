@@ -19,7 +19,5 @@ public class Carname {
     @Override
     public String toString() {
         return carname;
-
     }
-
 }

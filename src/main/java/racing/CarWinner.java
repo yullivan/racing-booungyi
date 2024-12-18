@@ -68,7 +68,6 @@ public class CarWinner {
                 hasWinner = true;
             }
         }
-
         return hasWinner;
     }
 
@@ -88,6 +87,7 @@ public class CarWinner {
             }
         }
     }
+
     public List<Carname> creatcarlist(String string) {
         List<Carname> carlist = new ArrayList<>();
         for (String str : string.split(",")) {
@@ -96,5 +96,4 @@ public class CarWinner {
         }
         return carlist;
     }
-
 }

@@ -18,13 +18,19 @@ class ApplicationTests {
     }
 
     @Test
-    void CarwinnerTest() {
+    void CarwinnerTest1() {
         Carname carname = new Carname("21");
         List<Carname> 비교군 = new ArrayList<>();
         비교군.add(carname);
         List<Carname> carnameList = new ArrayList<>();
         carnameList.add(carname);
         assertThat(carnameList).isEqualTo(비교군);
+    }
+
+    @Test
+    void CarWinnerTest2() {
+
+
     }
 
     @Test
